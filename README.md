@@ -32,7 +32,7 @@ A Spring Boot project to manage schools and students. Uses Spring JDBC Template 
 
 ## Swagger Documentation
 
-Access API documentation and test the endpoints in Swagger UI: [http://localhost:9090/swagger-ui.html](http://localhost:9090/swagger-ui.html)
+Access API documentation and test the endpoints in Swagger UI: [http://localhost:9090/swagger-ui.html](http://localhost:9090/swagger-ui/index.html)
 
 ## Project Structure
 
