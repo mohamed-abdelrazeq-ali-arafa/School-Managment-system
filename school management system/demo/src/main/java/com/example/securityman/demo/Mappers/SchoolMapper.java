@@ -13,7 +13,7 @@ public class SchoolMapper implements RowMapper<School> {
     @Override
     public School mapRow(ResultSet rs, int rowNum) throws SQLException {
         School school = new School();
-        school.setId(rs.getLong("id"));
+        school.setId(rs.getInt("id"));
         school.setName(rs.getString("name"));
         school.setAddress(rs.getString("address"));
         school.setContactNumber(rs.getString("contactNumber"));

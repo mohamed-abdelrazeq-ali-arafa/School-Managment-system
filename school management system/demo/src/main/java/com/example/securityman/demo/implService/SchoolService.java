@@ -9,11 +9,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Component
 public class SchoolService   implements ISchoolService {
 
     @Autowired
@@ -34,7 +35,7 @@ public class SchoolService   implements ISchoolService {
 
 
     @Override
-    public String deleteSchool(Long id) {
+    public String deleteSchool(int id) {
         String sql = "DELETE FROM school WHERE id = ?";
         int rowsAffected = jdbcTemplate.update(sql, id);
 
@@ -53,14 +54,14 @@ public class SchoolService   implements ISchoolService {
     }
 
 
-    public School getSchoolById(Long id) {
+    public School getSchoolById(int id) {
         LOGGER.info("start of SchoolService.getSchoolById with  id "+id);
         String sql = "SELECT * FROM school WHERE id = ?";
         return jdbcTemplate.queryForObject(sql, new Object[]{id}, new SchoolMapper());
     }
 
     @Override
-    public String updateSchool(Long id,School school) {
+    public String updateSchool(int id,School school) {
         LOGGER.info("start of SchoolService.updateschool");
         if(existsById(id)) {
             String sql = "UPDATE school SET name = ?, address = ?, contactNumber = ?, about = ? WHERE id = ?";
@@ -79,7 +80,7 @@ public class SchoolService   implements ISchoolService {
     }
 
     @Override
-    public boolean existsById(Long id) {
+    public boolean existsById(int id) {
             String sql = "SELECT COUNT(*) FROM school WHERE id = ?";
             int count = jdbcTemplate.queryForObject(sql, Integer.class, id);
             return count > 0;

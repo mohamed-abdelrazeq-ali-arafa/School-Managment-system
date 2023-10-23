@@ -21,9 +21,7 @@ public class SchoolRestController {
 
     @RequestMapping(value= "/addschool",method = RequestMethod.POST)
     public School  addCourse(@RequestBody School school){
-        schoolService.addSchool(school);
-        return school;
-
+        return  schoolService.addSchool(school);
     }
 
     @RequestMapping(value= "/countschool",method = RequestMethod.GET)
@@ -33,7 +31,7 @@ public class SchoolRestController {
     }
 
     @RequestMapping(value="/getschool/{theid}",method = RequestMethod.GET)
-    public School getCourseById(@PathVariable Long theid){
+    public School getSchoolById(@PathVariable int theid){
         School res = schoolService.getSchoolById(theid);
         return res;
     }
@@ -43,12 +41,12 @@ public class SchoolRestController {
         return schoolService.getAllSchool();
     }
     @RequestMapping(value="/deleteschool/{id}",method = RequestMethod.DELETE)
-    public String deleteSchool(@PathVariable Long id){
+    public String deleteSchool(@PathVariable int id){
          return schoolService.deleteSchool(id);
     }
 
     @PutMapping("updateschool/{id}")
-    public String updateSchool(@PathVariable Long id, @RequestBody School school) {
+    public String updateSchool(@PathVariable int id, @RequestBody School school) {
           return schoolService.updateSchool(id,school);
     }
 
