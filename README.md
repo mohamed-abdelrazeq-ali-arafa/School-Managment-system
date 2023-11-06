@@ -100,6 +100,15 @@ Access API documentation and test the endpoints in Swagger UI: [http://localhost
 ## Database Configuration
 
 Set your database connection details in `application.properties`.
+Open sql Work Bench and create table
+CREATE TABLE school (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    address VARCHAR(255),
+    contactNumber VARCHAR(20),
+    about TEXT
+);
+
 
 ## Usage
 
