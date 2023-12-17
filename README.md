@@ -10,16 +10,11 @@ Entities
 1. Course
 The Course entity represents different courses offered in the educational system.
 
-2. Instructor
-The Instructor entity represents instructors who teach courses. Each Instructor has a one-to-one relation with an InstructorDetails entity.
 
-3. InstructorDetails
-InstructorDetails holds additional information about instructors and is associated with the Instructor entity in a one-to-one relationship.
-
-4. Student
+2. Student
 The Student entity represents students who can register for courses. Students have a many-to-many relationship with the Course entity.
 
-5. School
+3. School
 The School entity represents educational institutions. The School entity is managed using JDBC template.
 
 Application Components
